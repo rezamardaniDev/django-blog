@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,16 +39,21 @@
         background: #fff;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        flex: 1; /* Ensures the container takes up available space */
+        flex: 1;
       }
 
-      /* Individual Post */
       .post {
         margin-bottom: 1.5rem;
         padding: 1rem;
         border: 1px solid #ddd;
         border-radius: 8px;
         background: #fefefe;
+        display: flex; /* Flexbox layout */
+        align-items: center; /* Vertically align content and image */
+      }
+
+      .post-content {
+        flex: 1; /* Take up remaining space */
       }
 
       .post h2 {
@@ -76,15 +82,22 @@
         background-color: #45a049;
       }
 
-      /* Views Counter */
       .views {
         padding: 0.3rem 0.7rem;
-        background-color:rgb(83, 89, 90);
-        color: white;
+        color: rgb(63, 64, 65);
         margin: 0.5rem 0;
         border-radius: 4px;
         font-size: 0.9rem;
         width: fit-content;
+        display: inline;
+      }
+
+      .post img {
+        width: 300px; 
+        height: auto;
+        border-radius: 10px;
+        display: block;
+        margin: 0.8rem auto;
       }
 
       /* Footer */
@@ -93,7 +106,7 @@
         padding: 1rem;
         background: #333;
         color: white;
-        margin-top: auto; /* Pushes the footer to the bottom if content is short */
+        margin-top: auto;
       }
 
       footer p {
@@ -110,10 +123,14 @@
     <div class="container">
       {% for post in posts %}
       <div class="post">
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.description | truncatewords:10 }}</p>
-        <a href="{% url 'articles:detail' post.id %}">View Post</a>
-        <div class="views">{{ post.post_view }} views</div>
+        <div class="post-content">
+          <img src="{% static "article/img/am.jpg" %}" alt="Post Image">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.description | truncatewords:10 }}</p>
+          <a href="{% url 'articles:detail' post.id %}">View Post</a>
+          <div class="views">{{ post.post_view }} views</div>
+        </div>
+       
       </div>
       {% endfor %}
     </div>
