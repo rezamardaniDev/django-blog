@@ -8,7 +8,7 @@
       /* General Reset */
       body {
         margin: 0;
-        font-family: Arial, sans-serif;
+        font-family: Vazir, sans-serif;
         line-height: 1.6;
         background-color: #f9f9f9;
         color: #333;
@@ -76,6 +76,17 @@
         background-color: #45a049;
       }
 
+      /* Views Counter */
+      .views {
+        padding: 0.3rem 0.7rem;
+        background-color:rgb(83, 89, 90);
+        color: white;
+        margin: 0.5rem 0;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        width: fit-content;
+      }
+
       /* Footer */
       footer {
         text-align: center;
@@ -99,10 +110,10 @@
     <div class="container">
       {% for post in posts %}
       <div class="post">
-        <h2>{{post.title}}</h2> 
+        <h2>{{ post.title }}</h2>
         <p>{{ post.description | truncatewords:10 }}</p>
-        <p>{{post.post_view}} view</p>
         <a href="{% url 'articles:detail' post.id %}">View Post</a>
+        <div class="views">{{ post.post_view }} views</div>
       </div>
       {% endfor %}
     </div>
