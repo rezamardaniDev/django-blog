@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            margin-top: 10%;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #ff6b6b;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 1.2rem;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Sorry, the page you are looking for does not exist.</p>
+        <a href="{% url 'articles:main' %}">Go back to Home</a>
+    </div>
+</body>
+</html>

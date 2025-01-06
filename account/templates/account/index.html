@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروفایل کاربر</title>
+    <style>
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            10% { background-position: 10% 50%; }
+            20% { background-position: 20% 50%; }
+            30% { background-position: 30% 50%; }
+            40% { background-position: 40% 50%; }
+            50% { background-position: 50% 50%; }
+            60% { background-position: 60% 50%; }
+            70% { background-position: 70% 50%; }
+            80% { background-position: 80% 50%; }
+            90% { background-position: 90% 50%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        body {
+            font-family: "Vazir", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .profile-container {
+            max-width: 500px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .profile-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .profile-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            overflow: hidden;
+            border: 4px solid #ddd;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            animation: rainbow 60s infinite ease-in-out;
+        }
+
+        .profile-item {
+            margin-bottom: 10px;
+            text-align: right;
+        }
+
+        .profile-item label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .profile-item span {
+            color: #555;
+        }
+
+        .profile-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .profile-buttons button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: "Vazir", sans-serif;   
+        }
+
+        .profile-buttons button.report {
+            background-color: #dc3545;
+        }
+
+        .vip-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 7px;
+            font-size: 14px;
+            color: #fff;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, violet);
+            background-size: 400% 400%;
+            animation: rainbow 4s infinite linear;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <div class="profile-header">
+        <h3>پروفایل کاربر</h3>
+    </div>
+    <div class="profile-content">
+        <div class="profile-image">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww" alt="عکس کاربر">
+        </div>
+        <div>
+            <span class="vip-badge">کاربر ویژه</span>
+            <div class="profile-name" id="user-name">{{username}}</div>
+        </div>
+        <div class="profile-item">
+            <label>ایمیل:</label>
+            <span id="user-email">john.doe@example.com</span>
+        </div>
+        <div class="profile-item">
+            <label>تلفن:</label>
+            <span id="user-phone">+1-234-567-890</span>
+        </div>
+        <div class="profile-item">
+            <label>آدرس:</label>
+            <span id="user-address">خیابان اصلی ۱۲۳، اسپرینگفیلد، آمریکا</span>
+        </div>
+        <div class="profile-buttons">
+            <button id="follow-button">دنبال کردن</button>
+            <button class="report" id="report-button">گزارش کاربر</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

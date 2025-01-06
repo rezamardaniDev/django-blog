@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Posts</title>
+    <style>
+      /* General Reset */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Header */
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      /* Container for Posts */
+      .container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        flex: 1; /* Ensures the container takes up available space */
+      }
+
+      /* Individual Post */
+      .post {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fefefe;
+      }
+
+      .post h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+        color: #4caf50;
+      }
+
+      .post p {
+        margin: 0 0 1rem;
+        font-size: 1rem;
+        color: #555;
+      }
+
+      .post a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      .post a:hover {
+        background-color: #45a049;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background: #333;
+        color: white;
+        margin-top: auto; /* Pushes the footer to the bottom if content is short */
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>All Posts</h1>
+    </header>
+
+    <div class="container">
+      {% for post in posts %}
+      <div class="post">
+        <h2>{{post.title}}</h2> 
+        <p>{{ post.description | truncatewords:10 }}</p>
+        <p>{{post.post_view}} view</p>
+        <a href="{% url 'articles:detail' post.id %}">View Post</a>
+      </div>
+      {% endfor %}
+    </div>
+
+    <footer>
+      <p>&copy; 2025 My Blog | Reza Mardani</p>
+    </footer>
+  </body>
+</html>
