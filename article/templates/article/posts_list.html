@@ -4,116 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "article/css/style.css" %}">
     <title>All Posts</title>
-    <style>
-      /* General Reset */
-      body {
-        margin: 0;
-        font-family: Vazir, sans-serif;
-        line-height: 1.6;
-        background-color: #f9f9f9;
-        color: #333;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      /* Header */
-      header {
-        background-color: #4caf50;
-        color: white;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      header h1 {
-        margin: 0;
-        font-size: 2rem;
-      }
-
-      /* Container for Posts */
-      .container {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 1rem;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        flex: 1;
-      }
-
-      .post {
-        margin-bottom: 1.5rem;
-        padding: 1rem;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background: #fefefe;
-        display: flex; /* Flexbox layout */
-        align-items: center; /* Vertically align content and image */
-      }
-
-      .post-content {
-        flex: 1; /* Take up remaining space */
-      }
-
-      .post h2 {
-        margin: 0 0 0.5rem;
-        font-size: 1.5rem;
-        color: #4caf50;
-      }
-
-      .post p {
-        margin: 0 0 1rem;
-        font-size: 1rem;
-        color: #555;
-      }
-
-      .post a {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-        background-color: #4caf50;
-        color: white;
-        border-radius: 4px;
-        font-size: 1rem;
-      }
-
-      .post a:hover {
-        background-color: #45a049;
-      }
-
-      .views {
-        padding: 0.3rem 0.7rem;
-        color: rgb(63, 64, 65);
-        margin: 0.5rem 0;
-        border-radius: 4px;
-        font-size: 0.9rem;
-        width: fit-content;
-        display: inline;
-      }
-
-      .post img {
-        width: 300px; 
-        height: auto;
-        border-radius: 10px;
-        display: block;
-        margin: 0.8rem auto;
-      }
-
-      /* Footer */
-      footer {
-        text-align: center;
-        padding: 1rem;
-        background: #333;
-        color: white;
-        margin-top: auto;
-      }
-
-      footer p {
-        margin: 0;
-        font-size: 1rem;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -130,7 +22,6 @@
           <a href="{% url 'articles:detail' post.id %}">View Post</a>
           <div class="views">{{ post.post_view }} views</div>
         </div>
-       
       </div>
       {% endfor %}
     </div>
