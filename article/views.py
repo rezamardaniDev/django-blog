@@ -18,3 +18,11 @@ def post_view(request, post_id):
     post.post_view += 1
     post.save()
     return render(request, 'article/post_detail.html', context={'post': post})
+
+def add_post(request):
+    
+    if request.method == 'POST':
+        post = Post.objects.create(title=request.POST.get('title'), description=request.POST.get('description'))
+        return HttpResponse(f"Post created with ID: {post.id}")
+    
+    return render(request, 'article/add_post.html')

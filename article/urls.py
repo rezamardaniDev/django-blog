@@ -5,5 +5,6 @@ app_name = 'articles'
 
 urlpatterns = [
     path('', views.home_view, name='main'),
-    path('<int:post_id>/view', views.post_view, name='detail')
+    path('<int:post_id>/view', views.post_view, name='detail'),
+    path('add_post', views.add_post, name='add-post')
 ]
