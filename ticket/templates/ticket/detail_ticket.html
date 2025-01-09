@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        padding: 20px;
+      }
+
+      .header {
+        text-align: center;
+        background: #4caf50;
+        color: white;
+        padding: 15px 0;
+        font-size: 24px;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .ticket-detail {
+        margin: 20px 0;
+      }
+
+      .ticket-detail h3 {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .ticket-detail p {
+        color: #555;
+        line-height: 1.6;
+        margin: 5px 0;
+      }
+
+      .ticket-detail span {
+        font-weight: bold;
+        color: #4caf50;
+      }
+
+      .back-button {
+        display: inline-block;
+        margin-top: 20px;
+        background: #007bff;
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+
+      .back-button:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Ticket Details</div>
+      <div class="ticket-detail">
+        <h3>Title:</h3>
+        <p><span>{{ ticket.title }}</span></p>
+
+        <h3>Description:</h3>
+        <p>{{ ticket.description }}</p>
+
+        <h3>Status:</h3>
+        <p><span>{{ ticket.status }}</span></p>
+      </div>
+      <a href="{% url 'ticket:tickets' %}" class="back-button"
+        >Back to Tickets</a
+      >
+    </div>
+  </body>
+</html>

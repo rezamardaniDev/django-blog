@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Post
 
@@ -19,10 +19,11 @@ def post_view(request, post_id):
     post.save()
     return render(request, 'article/post_detail.html', context={'post': post})
 
+
 def add_post(request):
-    
     if request.method == 'POST':
-        post = Post.objects.create(title=request.POST.get('title'), description=request.POST.get('description'))
-        return HttpResponse(f"Post created with ID: {post.id}")
-    
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        post = Post.objects.create(title=title, description=description)
+        return redirect('/articles/') 
     return render(request, 'article/add_post.html')

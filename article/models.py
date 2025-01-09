@@ -12,6 +12,7 @@ class Post(models.Model):
     description = models.TextField()
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='published')
     post_view = models.IntegerField(default=0, editable=False)
+    image = models.ImageField(null=True, upload_to="articles")
     
     
     def __str__(self):

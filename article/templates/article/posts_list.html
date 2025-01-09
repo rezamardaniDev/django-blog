@@ -16,7 +16,7 @@
       {% for post in posts %}
       <div class="post">
         <div class="post-content">
-          <img src="{% static "article/img/am.jpg" %}" alt="Post Image">
+          <img src="{{ post.image.url }}" alt="Post Image">
           <h2>{{ post.title }}</h2>
           <p>{{ post.description | truncatewords:10 }}</p>
           <a href="{% url 'articles:detail' post.id %}">View Post</a>
